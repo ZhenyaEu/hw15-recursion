@@ -10,19 +10,22 @@
             let reverseNum = +String(number).split('').reverse().join('');
             let add = number + reverseNum;
             let reverseAdd = +String(add).split('').reverse().join('');
+            try {
             if (add === reverseAdd) {
                 
                 obj['result'] = add;
-                obj['number of steps'] = iteration;
+                obj['number of iterations'] = iteration;
                 return obj
             }
             
             return getpolyndrom(reverseAdd, iteration += 1);
-            
+        } catch (error) {
+            throw new Error('error');
+        }
 
         }
         
-        console.log(getpolyndrom(59));
+        console.log(getpolyndrom(89));
 
 
 
