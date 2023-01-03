@@ -1,0 +1,31 @@
+<body>
+    <script>
+
+
+
+        function getpolyndrom(number, iteration = 1) {
+            let obj = {};
+            
+
+            let reverseNum = +String(number).split('').reverse().join('');
+            let add = number + reverseNum;
+            let reverseAdd = +String(add).split('').reverse().join('');
+            if (add === reverseAdd) {
+                
+                obj['result'] = add;
+                obj['number of steps'] = iteration;
+                return obj
+            }
+            
+            return getpolyndrom(reverseAdd, iteration += 1);
+            
+
+        }
+        
+        console.log(getpolyndrom(59));
+
+
+
+
+    </script>
+</body>
